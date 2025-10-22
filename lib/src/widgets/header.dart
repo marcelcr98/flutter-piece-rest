@@ -25,9 +25,7 @@ class  HeaderWidget extends StatelessWidget {
       ),
       child: // de izquierda a derecha
       Row(
-        
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
         children: [
         Column( mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +34,31 @@ class  HeaderWidget extends StatelessWidget {
             Text("One Piece",style: tituloTextStyle),
             Text("serie",style: subtituloStyle)
           ],
-        )
+        ),
+        //Otro Raw
+        Row(children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.black.withOpacity(.1),
+            ),
+            child: IconButton(
+              icon: Icon(Icons.search,size:28,color: Colors.white), onPressed: (){},
+            ),
+          ),
+          const SizedBox(
+            width: 10,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: Colors.black.withOpacity(.1),
+            ),
+            child: IconButton(
+              icon: Icon(Icons.notifications,size:28,color: Colors.white), onPressed: (){},
+            ),
+          )
+        ],)
       ],)
     );
   }

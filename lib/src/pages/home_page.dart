@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onepiece_list/src/widgets/header.dart';
+import 'package:onepiece_list/src/widgets/list_widget.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -16,7 +17,8 @@ class _HomeState extends State<Home> {
       //backgroundColor: const Color(0xff21E295),
       body: Column( //Columna de arriba habia abajo con varias filas
         children: const <Widget>[
-          HeaderWidget()
+          HeaderWidget(),
+          ListaPersonajes()
         ],
       )
     );
