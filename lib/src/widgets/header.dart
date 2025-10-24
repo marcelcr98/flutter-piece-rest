@@ -31,8 +31,11 @@ class  HeaderWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
           //Elementos
           children: [
-            Text("One Piece",style: tituloTextStyle),
-            Text("serie",style: subtituloStyle)
+              Image.asset(
+              'assets/adidas-logo.png',
+              height: 85, // ajusta el tamaño del logo
+            ),
+            //Text("Essentials",style: subtituloStyle)
           ],
         ),
         //Otro Raw
