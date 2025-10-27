@@ -20,7 +20,14 @@ class _HomeState extends State<Home> {
           HeaderWidget(),
           ListaPersonajes()
         ],
-      )
+      ),
+
+floatingActionButton: FloatingActionButton(
+  onPressed: () {},
+  backgroundColor: const Color.fromARGB(255, 253, 253, 253),
+  shape: const CircleBorder(), // 👈 asegura forma perfectamente circular
+  child: const Icon(Icons.add, color: Colors.black),
+),
     );
   }
 }

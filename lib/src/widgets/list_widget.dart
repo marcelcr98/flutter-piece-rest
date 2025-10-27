@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:onepiece_list/src/pages/detalle_page.dart';
 
 class ListaPersonajes extends StatefulWidget {
   const ListaPersonajes({super.key});
@@ -37,7 +38,12 @@ class _ListaPersonajesState extends State<ListaPersonajes> {
           ),
           const Divider(height: 30, color: Colors.white),
           const SizedBox(height: 20),
-          bloquePersonaje("nombre", 0xff21E295, "shoes-adi"),
+          bloquePersonaje("Polos", 0xff21E295, "shoes-adi"),
+          bloquePersonaje("Zapatillas", 0xff21E295, "shoes-adi"),
+          bloquePersonaje("Originals", 0xff21E295, "shoes-adi"),
+          bloquePersonaje("Buzos", 0xff21E295, "shoes-adi"),
+          bloquePersonaje("Fútbol", 0xff21E295, "shoes-adi"),
+          bloquePersonaje("Novedades", 0xff21E295, "shoes-adi"),
         ],
       ),
     );
@@ -45,13 +51,22 @@ class _ListaPersonajesState extends State<ListaPersonajes> {
 
   //Contenedores
   Widget bloquePersonaje(String nombre, int color, String imagen) {
-    return Container(
+    
+    return GestureDetector(
+      onTap: () => {
+        Navigator.of(context).push(MaterialPageRoute(builder: 
+        (context)=> DetailPage(color: color, image: "assets/$imagen.avif",)))
+      },
+      child: Container(
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Color.fromARGB(66, 43, 43, 43),
+
       ),
       height: 65,
-      child: Row(
+      child: Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
@@ -60,7 +75,7 @@ class _ListaPersonajesState extends State<ListaPersonajes> {
                   boxShadow: [
                     BoxShadow(
                       //blurRadius: 5,
-                      offset: const Offset(-7, -5),
+                      //offset: const Offset(-7, -5),
                       //blurStyle: BlurStyle.inner,
                       color: Color(color),
                     ),
@@ -75,10 +90,14 @@ class _ListaPersonajesState extends State<ListaPersonajes> {
                 style: const TextStyle(fontSize: 16, color: Colors.white),
               ),
             ],
+          
           ),
+        
+        IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert_rounded, color: Colors.grey))
         ],
       ),
-    );
+    ));
+    
   }
 
   Column bloquesPortada(String image, String titulo, String subtitulo) {
